@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Poppins, sans-serif;
+}
+
+:root {
+    --primary: #f70;
+    --whites: #fff;
+    --user-message: #fdb;
+    --main-width: 800px;
+    --header-height: 60px;
+    --shadow-color: #f702;
+    --selection-color: #f701;
+    --text-color: #111;
+    --bg-color: #f6f0ee;
+    --defaultlink: #07f;
+    --defaultlinkbg: #0073ff3b;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--header-height);
+}
+
+header {
+    width: 100vw;
+    height: var(--header-height);
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 100;
+    position: fixed;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+
+header .logo .maltion-word {
+    font-family: Poppins;
+    font-weight: 700;
+    color: #888;
+}
+
+header .logo .aish-word {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+header .logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.iheader {
+    width: calc(100% - 20px);
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iheader .account-side {
+    display: none;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    margin: auto 10px;
+}
+
+.iheader .account-side .text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.iheader .account-side .text-side h4 {
+    font-weight: 600;
+    margin: -1px;
+}
+
+.iheader .account-side .text-side h5 {
+    font-weight: 400;
+    font-size: 12px;
+    margin: -1px;
+    opacity: 0.5;
+}
+
+.meui-button1,
+.meui-button2,
+.meui-button3,
+.meui-button4,
+.meui-button5 {
+    height: 24px;
+    outline-color: var(--primary);
+    outline-width: 1px;
+}
+
+.meui-button1:focus,
+.meui-button2:focus,
+.meui-button3:focus,
+.meui-button4:focus,
+.meui-button5:focus {
+    outline: none;
+}
+
+.meui-button1:focus-visible,
+.meui-button2:focus-visible,
+.meui-button3:focus-visible,
+.meui-button4:focus-visible,
+.meui-button5:focus-visible {
+    outline: 1px solid var(--primary);
+}
+
+
+.pfp {
+    width: 40px;
+    height: 40px;
+    border-radius: 100vh;
+    border: 2px solid #8888;
+}
+
+.context-menu {
+    width: 150px;
+    padding: 5px;
+    min-height: 100px;
+    background-color: var(--whites);
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    z-index: 200;
+    box-shadow: 0 0 5px 5px #0001;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.context-menu li {
+    width: calc(100% - 16px);
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.context-menu li:focus {
+    outline: none;
+}
+
+.context-menu li:hover,
+.context-menu-li:focus-visible {
+    background-color: var(--shadow-color);
+}
+
+section {
+    width: var(--main-width);
+    margin: 20px auto;
+}
+
+.mnetwork-mention {
+    color: var(--defaultlink);
+    background-color: var(--defaultlinkbg);
+    border-radius: 1vh;
+    padding-left: 0.3vh;
+    padding-right: 0.3vh;
+    text-decoration: none;
+}
+
+p {
+    margin: 5px 0;
+}
+
+strong,
+h3 {
+    font-weight: 600;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .error {
+    width: 500px;
+    height: 430px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px #0002;
+    display: none;
+    flex-direction: column;
+    background-color: var(--whites);
+    overflow: hidden;
+}
+
+.overlay .iform {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-row {
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+}

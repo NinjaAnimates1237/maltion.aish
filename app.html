@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://easy.maltion.com/meui.css">
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css?v=4">
+    <title>Aish</title>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="error generic-form" id="vip-required-form">
+            <img src="res/vip-banner.png">
+            <div class="iform">
+                <h2>VIP pass required</h2>
+                <p>Sorry, but an MNetwork VIP pass is required to use Maltion Aish. The MNetwork VIP pass can be
+                    obtained with and
+                    without real money.</p>
+                <p>Even with VIP pass, you'll be limited to 30 messages per day. This limitation might be removed in the
+                    future.</p>
+
+                <div class="button-row">
+                    <a class="meui-button2" href="https://www.maltion.com/settings.html">Settings</a>
+                    <a class="meui-button1" href="https://network.maltion.com">Go to MNetwork</a>
+                </div>
+            </div>
+        </div>
+        <div class="error generic-form" id="message-limit-form">
+            <div class="iform">
+                <h2>Cannot send more messages today</h2>
+                <p>Your network has exhausted its designated message limit and cannot continue using Maltion Aish for
+                    the rest of the day.</p>
+                <p>The reason the amount of messages you can send in a day is limited is because AI costs money and
+                    Maltion can't offer unlimited messages for everyone without going bankrupt.
+                </p>
+                <p>You can still see your existing messages of all your existing conversations, though.</p>
+                <p>Try again tomorrow.</p>
+                <div class="button-row">
+                    <a class="meui-button2" href="https://www.maltion.com/settings.html">Settings</a>
+                    <a class="meui-button1" onclick="closeForms()">Accept and close</a>
+                </div>
+            </div>
+        </div>
+         <div class="error generic-form" id="banned-form">
+            <div class="iform">
+                <h2>Banned network</h2>
+                <p>Your network has been used to violate our terms of service or abused it,
+                    and can no longer use Maltion Aish because of it.</p>
+                <p>Contact appeals@maltion.com to solve this issue.</p>
+                <div class="button-row">
+                    <a class="meui-button2" href="https://www.maltion.com/settings.html">Settings</a>
+                    <a class="meui-button1" href="https://network.maltion.com">Go to MNetwork</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+
+    </header>
+    <aside>
+        <button class="new-chat-btn" onclick="window.location.href='app'"><img
+                src="https://easy.maltion.com/icons/Add-White.png"><span>New
+                chat</span></button>
+        <div class="conversation-history">
+            <h4>Previous conversations</h4>
+            <p id="conversation-history-text">Loading...</p>
+            <ul id="conversation-history-list"></ul>
+        </div>
+        <div class="message-usage">
+            <h4>Messages left</h4>
+            <div class="msg-left-progress">
+                <progress value="0", max="30" id="messages-left-progress"></progress>
+                <strong id="messages-left-counter">0</strong>
+            </div>
+            <p>Your messages reset back to 30 every day.</p>
+        </div>
+    </aside>
+    <main>
+        <div class="mc-container">
+            <div class="msg-container"></div>
+        </div>
+        <div class="msg-box-container msg-box-new-conversation">
+            <h1 class="greeting-header" id="greeting-header">What's up?</h1>
+            <form class="user-msg-box" id="user-msg-form">
+                <input type="text" placeholder="Ask Aish" id="user-msg-box" autocomplete="off">
+                <select id="model-selector">
+                    <option value="model:maltion-default">Gemini 3.1 Flash-Lite (Maltion)</option>
+                    <option value="add-model">(Manage models)</option>
+                </select>
+                <button type="submit" id="user-msg-submit-btn"><img src="res/send png.png"></button>
+            </form>
+            <h6>Aish is powered by language models, which can make mistakes. Double check everything it says or
+                produces.</h6>
+        </div>
+    </main>
+    <ul class="context-menu" id="conversation-options-cmenu">
+        <li onclick="renameSelectedConversation()"><a>Rename</a></li>
+        <li onclick="deleteSelectedConversation()"><a>Delete</a></li>
+        <li onclick="removeContextMenu()"><a>Cancel</a></li>
+    </ul>
+</body>
+<script src="scripts/common.js"></script>
+<script src="scripts/session.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="scripts/chat.js"></script>
+<script src="scripts/app.js"></script>
+
+</html>
